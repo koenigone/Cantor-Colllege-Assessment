@@ -1,0 +1,66 @@
+.about-us-title {
+  margin: 0 0 30px 0;
+}
+
+.about-us .about-us-title h1,
+.facilities .facilities-title h1 {
+  color: #7B003A;
+}
+
+.about-us-paragraph p {
+  line-height: 30px;
+}
+
+.facilities-title {
+  margin: 80px 0 30px 0;
+}
+
+.facilities-paragraph {
+  margin: 0 0 40px 0;
+}
+
+.pink {
+  color: #B6004C;
+}
+
+.facilities-list {
+  margin: 0 auto;
+  text-align: start;
+  width: 90%;
+}
+
+.facilities-list-title {
+  margin: 0 0 20px 0;
+}
+
+.facilities-list-title h2 {
+  color: #7b0039af;
+}
+
+.facilities-list-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.facilities-list-items {
+  width: 48%;
+}
+
+.facilities-list-items ul li {
+  color: rgba(0, 0, 0, 0.719);
+}
+
+
+.facilities-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 500px;
+}
+
+.facilities-image-grid img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.171);
+}
