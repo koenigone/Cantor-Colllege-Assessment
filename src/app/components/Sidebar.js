@@ -27,8 +27,8 @@ const Sidebar = () => {
 
   return (
     <nav>
-      {/* <button className='burger' onClick={toggleMenu}>&#9776;</button> */}
-      <div className="sidebar">
+      <button className='burger' onClick={toggleMenu}>&#9776;</button>
+      <div className={menuOpen ? "sidebar active" : "sidebar"}>
         <div className="logo">
           <Image 
             src="/logo-cantor.png" 

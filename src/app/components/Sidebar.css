@@ -1,11 +1,29 @@
 .sidebar {
   background-color: #B6004C;
-  height: 100vh;
-  width: 65%;
+  display: none;
   position: fixed;
   top: 0;
-  transform: translateX(0);
+  left: 0;
+  width: 250px;
+  height: 100vh;
   transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.sidebar.active {
+  display: block;
+  transform: translateX(0);
+}
+
+.burger {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
   z-index: 1000;
 }
 
@@ -77,11 +95,11 @@
 
 @media (min-width: 1000px) {
   .sidebar {
-    position: static;
-    width: 100%;
+    display: block;
+    transform: translateX(0);
   }
-  .sidebar.open {
-    transform: translateX(0px);
+  .burger {
+    display: none;
   }
   .overlay {
     display: none;
