@@ -1,12 +1,16 @@
 import './globals.css';
 import './scrollbar.css';
 import Sidebar from "./components/Sidebar";
-import Searchbar from './components/Searchbar';
+import Header from './components/header/header';
+import Head from 'next/head';
 
 export default function RootLayout({ children }) {
   
   return (
     <html lang='en'>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body>
         <div className="container">
           <aside>
@@ -14,9 +18,7 @@ export default function RootLayout({ children }) {
           </aside>
 
           <div className="content">
-            <header>
-              <Searchbar />
-            </header>
+            <Header />
             <main className="main-container">
               {children}
             </main>

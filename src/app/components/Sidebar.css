@@ -1,28 +1,26 @@
 .sidebar {
   background-color: #B6004C;
-  display: none;
+  height: 100vh;
+  width: 65%;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
-  transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .sidebar.active {
-  display: block;
   transform: translateX(0);
 }
 
 .burger {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+  font-size: 6vh;
   background: none;
   border: none;
-  color: black;
+  color: #B6004C;
   cursor: pointer;
   z-index: 1000;
 }
@@ -73,35 +71,15 @@
   background-color: #c51e64;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-.toggleSidebar-icon {
-  color: #B6004C;
-  float: right;
-  font-size: 6vh;
-}
-
-@media (min-width: 500) and (max-wdith: 999) {
-
-}
-
 @media (min-width: 1000px) {
   .sidebar {
-    display: block;
+    width: 15%;
     transform: translateX(0);
   }
   .burger {
     display: none;
   }
-  .overlay {
+  .sidebar .mobile-searchbar {
     display: none;
   }
 }

@@ -2,7 +2,6 @@
 
 body {
   font-family: "Varela Round", sans-serif;
-  font-weight: 400;
   overflow: hidden;
 }
 
@@ -12,37 +11,38 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  margin: 0 auto;
-  padding: 1rem;
-  overflow-y: auto;
-  text-align: start;
-}
-
 .container {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .container .content {
-  flex: 1;
+  flex: 1; /* take all the available space next to the sidebar */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-header {
-  color: white;
-  text-align: center;
-  flex-shrink: 0;
+main {
+  margin: 0 auto;
+  flex: 1; /* allow main to take available space in content */
+  padding: 2vh;
+  overflow-y: auto;
+  text-align: start;
+  width: 100%;
 }
 
 @media (min-width: 1000px) {
+  .container {
+    flex-direction: row; /* flex direction on desktop */
+  }
   aside {
-      width: 15%;
+    width: 15%;
   }
   main {
-      width: 70%;
+    width: 65%;
   }
 }
