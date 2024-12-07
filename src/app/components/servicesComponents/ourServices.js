@@ -1,3 +1,5 @@
+import './services.css';
+
 const OurServices = () => {
   const services = [
     {
@@ -28,7 +30,7 @@ const OurServices = () => {
   ];
 
   return (
-    <section>
+    <section className="our-services-container" id='ourServices'>
       <h2>Our Services</h2>
       {services.map((service, index) => (
         <article key={index}>

@@ -10,7 +10,7 @@ const UseOfFacilitiesRules = () => {
   ];
 
   return (
-    <section>
+    <section id="facilitiesUse">
       <h2>Use of Facilities</h2>
       <ul>
         {rules.map((rule, index) => (

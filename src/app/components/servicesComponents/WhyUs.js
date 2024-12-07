@@ -1,3 +1,5 @@
+import './services.css';
+
 const WhyUs = () => {
   const benefits = [
     {
@@ -23,12 +25,12 @@ const WhyUs = () => {
   ];
 
   return (
-    <section>
+    <section className='why-us-container' id='whyUs'>
       <h2>Why Partner with Cantor College?</h2>
       <ul>
         {benefits.map((benefit, index) => (
           <li key={index}>
-            <strong>{benefit.title}:</strong> {benefit.description}
+            <strong>-{benefit.title}:</strong> {benefit.description}
           </li>
         ))}
       </ul>

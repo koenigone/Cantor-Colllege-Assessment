@@ -1,5 +1,4 @@
-import ResourcesHeader from "../components/learningResourcesComponents/header";
-import Introduction from "../components/forStudentsComponents/introduction";
+import ResourcesHeader from "../components/learningResourcesComponents/resourcesHeader";
 import AccessRules from "../components/learningResourcesComponents/accessRules";
 import UseOfFacilitiesRules from "../components/learningResourcesComponents/useOfFacilitiesRules";
 
@@ -12,7 +11,6 @@ const LearningResources = () => {
   return (
     <div>
       <ResourcesHeader />
-      <Introduction />
       <AccessRules />
       <UseOfFacilitiesRules />
     </div>

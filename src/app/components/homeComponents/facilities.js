@@ -3,23 +3,30 @@ import Image from 'next/image';
 
 const Facilities = () => {
   const facilitiesServices = [
-    { key: 1, name: "Wi-Fi technology" },
-    { key: 2, name: "Pool teaching rooms, including classrooms to teach from 25 - 80 students" },
-    { key: 3, name: "Specialist faculty facilities" },
-    { key: 4, name: "A double-height lecture theatre at first and second floor level" },
-    { key: 5, name: "Dramatic three-storey glass open atrium" },
-    { key: 6, name: "Meeting rooms" },
-    { key: 7, name: "Office accommodation" },
-    { key: 8, name: "Specialist IT facilities" },
-    { key: 9, name: "Reception desk area" },
-    { key: 10, name: "Catering outlet" },
-    { key: 11, name: "Parking for disabled badge holders" },
-    { key: 12, name: "Cycle racks" },
-    { key: 13, name: "Gallery" }
+    "Wi-Fi technology",
+    "Pool teaching rooms, including classrooms to teach from 25 - 80 students",
+    "Specialist faculty facilities",
+    "A double-height lecture theatre at first and second floor level",
+    "Dramatic three-storey glass open atrium",
+    "Meeting rooms",
+    "Office accommodation",
+    "Specialist IT facilities",
+    "Reception desk area",
+    "Catering outlet",
+    "Parking for disabled badge holders",
+    "Cycle racks",
+    "Gallery"
   ];
-  
-  return(
-    <section className='facilities'>
+
+  const images = [
+    { key: 1, src: "/IMG_1099.jpeg", alt: "Wi-Fi technology image" },
+    { key: 2, src: "/cantor-gallery.jpg", alt: "Teaching room image" },
+    { key: 3, src: "/Cantor-atrium 3.jpg", alt: "Specialist facilities image" },
+    { key: 4, src: "/cantor-classroom.jpg", alt: "Classroom image" },
+  ];
+
+  return (
+    <section className='facilities' id='facilities'>
       <div className='facilities-title'>
         <h1>Facilities</h1>
       </div>
@@ -46,37 +53,22 @@ const Facilities = () => {
         <div className='facilities-list-container'>
           <div className='facilities-list-items'>
             <ul>
-              {facilitiesServices.map(service => (
-                <li key={service.key}>{service.name}</li>
+              {facilitiesServices.map((service, index) => (
+                <li key={index}>{service}</li>
               ))}
             </ul>
           </div>
 
           <div className='facilities-image-grid'>
-            <Image 
-              src="/IMG_1099.jpeg" 
-              alt="Cantor Logo" 
-              width={100}
-              height={100}
-            />
-            <Image 
-              src="/cantor-gallery.jpg" 
-              alt="Cantor Logo" 
-              width={100}
-              height={100}
-            />
-            <Image 
-              src="/Cantor-atrium 3.jpg" 
-              alt="Cantor Logo" 
-              width={100}
-              height={100}
-            />
-            <Image 
-              src="/cantor-classroom.jpg" 
-              alt="Cantor Logo" 
-              width={100}
-              height={100}
-            />
+            {images.map(image => (
+              <Image 
+                key={image.key} 
+                src={image.src} 
+                alt={image.alt} 
+                width={100} 
+                height={100} 
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -84,4 +76,4 @@ const Facilities = () => {
   );
 }
 
-export default Facilities
+export default Facilities;

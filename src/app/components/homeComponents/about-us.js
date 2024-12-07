@@ -2,7 +2,7 @@ import './home.css';
 
 const AboutUs = () => {
     return(
-        <section className='about-us'>
+        <section className='about-us' id='aboutUs'>
             <div className='about-us-title'>
                 <h1>About Us</h1>
             </div>

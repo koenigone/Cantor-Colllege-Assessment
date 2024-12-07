@@ -8,7 +8,7 @@ const AccessRules = () => {
   ];
 
   return (
-    <section>
+    <section id="accessRules">
       <h2>Access Rules</h2>
       <ul>
         {rules.map((rule, index) => (

@@ -1,0 +1,21 @@
+section {
+  margin: 0px 0 50px 0;
+}
+
+.our-services-container article {
+  margin: 0 20px 50px 20px;
+}
+
+.why-us-container ul {
+  width: 500px;
+  margin: 0 50px;
+  list-style-type: none;
+}
+
+.why-us-container ul li {
+  margin: 0 0 20px 0;
+}
+
+.why-us-container ul li strong {
+  color: #7B003A;
+}

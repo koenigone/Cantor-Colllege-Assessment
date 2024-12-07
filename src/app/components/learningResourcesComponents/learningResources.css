@@ -1,0 +1,11 @@
+section {
+  margin: 0 0 50px 0;
+}
+
+p, ul {
+  margin: 20px 20px;
+}
+
+ul li {
+  margin: 20px 0;
+}
