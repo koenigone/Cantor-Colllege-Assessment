@@ -2,10 +2,46 @@ section {
   margin: 0px 0 50px 0;
 }
 
+.information-hub-image-container {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.information-hub-image-container img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .informationhub-article-container article {
   margin: 20px 0;
 }
 
 .informationhub-article-container a {
   color: #B6004C;
+}
+
+
+/* TABLET SCREEN */
+@media (min-width: 650px) and (max-width: 1299px) {
+  .information-hub-image-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .information-hub-image-container img {
+    width: 90% !important;
+    height: 90% !important;
+  }
+}
+
+/* DESKTOP SCREEN */
+@media (min-width: 1300px) {
+  .information-hub-image-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .information-hub-image-container img {
+    width: 90% !important;
+    height: 90% !important;
+  }
 }

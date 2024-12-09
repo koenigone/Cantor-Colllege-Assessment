@@ -11,8 +11,14 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2 {
+h1 {
   color: #B6004C;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+}
+
+h2 {
+  color: #7B003A;
   margin: 0 0 20px 0;
 }
 
@@ -22,6 +28,24 @@ h4, h3 {
 
 p {
   line-height: 30px;
+  margin: 0 20px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+a {
+  color: #7B003A;
+  text-decoration: underline;
+}
+
+li {
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.highlight {
+  color: #B6004C;
 }
 
 .container {
@@ -41,15 +65,28 @@ p {
 }
 
 main {
+  width: 100%;
   margin: 0 auto;
+  padding: 20px 10px;
   flex: 1; /* allow main to take available space in content */
-  padding: 2vh;
   overflow-y: auto;
   text-align: start;
-  width: 100%;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 650px) and (max-width: 1299px) {
+  .container {
+    flex-direction: row; /* flex direction on tablet */
+  }
+  aside {
+    width: 30%;
+  }
+  main {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1300px) {
   .container {
     flex-direction: row; /* flex direction on desktop */
   }
@@ -58,5 +95,6 @@ main {
   }
   main {
     width: 65%;
+    padding: 30px 0;
   }
 }

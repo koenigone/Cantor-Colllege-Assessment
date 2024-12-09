@@ -9,12 +9,17 @@ const AccessRules = () => {
 
   return (
     <section id="accessRules">
-      <h2>Access Rules</h2>
-      <ul>
-        {rules.map((rule, index) => (
-          <li key={index}>{rule}</li>
-        ))}
-      </ul>
+      <div>
+        <h2>Access Rules</h2>
+      </div>
+
+      <div className="list-container">
+        <ul>
+          {rules.map((rule, index) => (
+            <li key={index}>{rule}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

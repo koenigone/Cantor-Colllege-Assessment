@@ -1,42 +1,21 @@
-header {
-  color: white;
-  text-align: center;
-}
-
-header .desktop-header {
-  display: none;
-}
-
-header .searchbar-container {
-  margin: 6px;
-}
-
-/* MOBILE HEADER STYLING */
-header .mobile-header {
+.mobile-header {
   display: flex;
   justify-content: space-between;
   padding: 1vh;
 }
 
-header .mobile-header img {
+.mobile-header img {
   height: 6vh;
 }
 
-header .desktop-header-container {
-  color: #7B003A;
-}
-
-header .desktop-header-container .dynamic-mode-switch {
-  position: absolute;
-  right: 40px;
-  top: 35px;
-}
-
-@media (min-width: 1000px) {
-  header .desktop-header {
-    display: block;
+@media (min-width: 650px) and (max-width: 1199px) {
+  .mobile-header {
+    display: none;
   }
-  header .mobile-header {
+}
+
+@media (min-width: 1200px) {
+  .mobile-header {
     display: none;
   }
 }

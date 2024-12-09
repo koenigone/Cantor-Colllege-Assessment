@@ -1,12 +1,12 @@
-import './globals.css';
-import './scrollbar.css';
+import "./globals.css";
+import "./scrollbar.css";
 import Sidebar from "./components/Sidebar";
-import Header from './components/header/header';
+import MobileHeader from "./components/header/mobile-header";
+import ScrollUp from "./components/scrollUp/scrollUp";
 
 export default function RootLayout({ children }) {
-  
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
         <div className="container">
           <aside>
@@ -14,10 +14,13 @@ export default function RootLayout({ children }) {
           </aside>
 
           <div className="content">
-            <Header />
-            <main className="main-container">
-              {children}
-            </main>
+            <header>
+              <div className="mobile-header">
+                <MobileHeader />
+              </div>
+            </header>
+            <main className="main-container">{children}</main>
+            <ScrollUp />
           </div>
         </div>
       </body>

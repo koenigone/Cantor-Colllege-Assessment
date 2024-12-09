@@ -1,65 +1,82 @@
-.about-us-title {
-  margin: 0 0 30px 0;
+section {
+  margin: 0 0 50px 0;
 }
 
-.about-us .about-us-title h1,
-.facilities .facilities-title h1 {
-  color: #7B003A;
-}
-
-.about-us-paragraph p {
-  line-height: 30px;
-}
-
-.facilities-title {
-  margin: 80px 0 30px 0;
-}
-
-.facilities-paragraph {
-  margin: 0 0 40px 0;
-}
-
-.pink {
-  color: #B6004C;
-}
-
+/* facilities */
 .facilities-list {
-  margin: 0 auto;
+  margin: 30px 0;
   text-align: start;
-  width: 90%;
-}
-
-.facilities-list-title {
-  margin: 0 0 20px 0;
-}
-
-.facilities-list-title h2 {
-  color: #7b0039af;
-}
-
-.facilities-list-container {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .facilities-list-items {
-  width: 48%;
-}
-
-.facilities-list-items ul li {
-  color: rgba(0, 0, 0, 0.719);
+  width: 90%;
+  margin: 20px 20px;
 }
 
 .facilities-image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  width: 500px;
+  width: 100%;
+  height: auto;
 }
 
 .facilities-image-grid img {
-width: 100%;
-height: auto;
-border-radius: 5px;
-box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.171);
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.171);
+}
+
+/* courses */
+.courses-offered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.courses-offered .course-item,
+.courses-offered .course-item p {
+  margin: 20px 0;
+}
+
+.courses-offered .course-item img {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 0 30px 0;
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.123);
+}
+
+/* footer */
+.homeFooter {
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* TABLET SCREEN */
+/* @media (min-width: 650px) and (max-width: 1299px) {
+
+} */
+
+/* DESKTOP SCREEN */
+@media (min-width: 1300px) {
+  .facilities-list-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+  }
+
+  .facilities-list-items {
+    width: 50%;
+  }
+
+  .facilities-image-grid {
+    width: 45%;
+  }
+
+  .courses-offered .course-item img {
+    width: 80% !important;
+  }
 }

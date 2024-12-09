@@ -11,12 +11,16 @@ const UseOfFacilitiesRules = () => {
 
   return (
     <section id="facilitiesUse">
-      <h2>Use of Facilities</h2>
-      <ul>
-        {rules.map((rule, index) => (
-          <li key={index}>{rule}</li>
-        ))}
-      </ul>
+      <div>
+        <h2>Use of Facilities</h2>
+      </div>
+      <div className="list-container">
+        <ul>
+          {rules.map((rule, index) => (
+            <li key={index}>{rule}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

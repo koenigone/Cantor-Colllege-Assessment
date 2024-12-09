@@ -2,10 +2,22 @@ section {
   margin: 0 0 50px 0;
 }
 
-p, ul {
+.resources-header-p p, ul {
   margin: 20px 20px;
 }
 
 ul li {
   margin: 20px 0;
+}
+
+.list-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+@media (min-width: 1300px) {
+  .list-container {
+    width: 90%;
+    margin: 20px 20px;
+  }
 }

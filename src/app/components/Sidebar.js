@@ -2,7 +2,6 @@
 import "./Sidebar.css";
 import Image from "next/image";
 import Link from "next/link";
-import Searchbar from "./Searchbar";
 import { IoIosArrowDown, IoMdBuild, IoMdHome } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { IoInformation } from "react-icons/io5";
@@ -11,58 +10,68 @@ import { RiAlignItemLeftFill } from "react-icons/ri";
 import React, { useState } from "react";
 
 const Sidebar = () => {
-
-  const [sidebarOpen, setSidebarOpen] = useState(false); 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [openMenuKey, setOpenMenuKey] = useState(null);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen); // Toggle the state
-};
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
 
   const toggleMenu = (key) => {
     setOpenMenuKey((prevKey) => (prevKey === key ? null : key));
   };
 
+  // NESTED TABS ARRAYS
   const homeTabs = [
     { key: 1, name: "About us", link: "/#aboutUs" },
-    { key: 2, name: "Facilities include", link: "/#facilities" },
+    { key: 2, name: "Facilities", link: "/#facilities" },
+    { key: 3, name: "Computing courses", link: "/#computingCourse" },
+    { key: 4, name: "Design courses", link: "/#designCourse" },
   ];
 
   const forStudentsTabs = [
-    { key: 1, name: "Introduction", link: "/forStudents#introduction" },
+    { key: 1, name: "Explore", link: "/forStudents#introduction" },
     { key: 2, name: "Our facilities", link: "/forStudents#ourFacilities" },
-    { key: 3, name: "Invitation", link: "/forStudents#invitation" },
+    { key: 3, name: "Experience us", link: "/forStudents#invitation" },
   ];
 
   const informationHubTabs = [
     {
       key: 1,
-      name: "Information hub",
+      name: "Staff information",
       link: "/informationHub#staffInformation",
     },
   ];
 
   const servicesTabs = [
-    { key: 1, name: "Services", link: "/services#servicesIntro" },
+    { key: 1, name: "Partner with us", link: "/services#servicesIntro" },
     { key: 2, name: "Our services", link: "/services#ourServices" },
     { key: 3, name: "Why us", link: "/services#whyUs" },
     { key: 4, name: "Get in touch", link: "/services#getInTouch" },
   ];
 
+  const coursesTabs = [
+    { key: 1, name: "Available courses", link: "/courses#courses" },
+  ];
+
   const resourcesTabs = [
     {
       key: 1,
-      name: "Resources rules",
-      link: "/learningResources#resourcesRules",
+      name: "Access rules",
+      link: "/learningResources#accessRules",
     },
-    { key: 2, name: "Access rules", link: "/learningResources#accessRules" },
     {
       key: 3,
-      name: "Facilities use",
+      name: "Use of facilities",
       link: "/learningResources#facilitiesUse",
     },
   ];
 
+  // SIDEBAR PARENT TABS
   const availableTabs = [
     { key: 1, name: "Home", link: "/", tabs: homeTabs, icon: <IoMdHome /> },
     {
@@ -90,6 +99,7 @@ const Sidebar = () => {
       key: 6,
       name: "Courses",
       link: "/courses",
+      tabs: coursesTabs,
       icon: <RiAlignItemLeftFill />,
     },
     {
@@ -103,7 +113,12 @@ const Sidebar = () => {
 
   return (
     <nav>
-      <button className='burger' onClick={toggleSidebar}>&#9776;</button>
+      <button className="burger" onClick={toggleSidebar}>
+        &#9776;
+      </button>
+
+      {sidebarOpen && <div className="overlay" onClick={closeSidebar}></div>}
+
       <menu className={sidebarOpen ? "sidebar active" : "sidebar"}>
         <div className="logo">
           <Image
@@ -112,10 +127,6 @@ const Sidebar = () => {
             width={100}
             height={100}
           />
-        </div>
-
-        <div className="mobile-searchbar">
-          <Searchbar />
         </div>
 
         <menu className="sidebar-tabs">
@@ -135,7 +146,7 @@ const Sidebar = () => {
                   <ul className="submenu">
                     {tab.tabs.map((item) => (
                       <li key={item.key} className="child-list-item">
-                        <Link href={item.link}>{item.name}</Link>
+                        <Link href={item.link}>- {item.name}</Link>
                       </li>
                     ))}
                   </ul>
