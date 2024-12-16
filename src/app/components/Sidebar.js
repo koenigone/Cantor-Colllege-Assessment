@@ -42,16 +42,51 @@ const Sidebar = () => {
 
   // SIDEBAR CHILD MENU TABS
   const homeTabs = [
-    { key: 1, name: "About us", link: "/#aboutUs" },
-    { key: 2, name: "Facilities", link: "/#facilities" },
-    { key: 3, name: "Computing courses", link: "/#computingCourse" },
-    { key: 4, name: "Design courses", link: "/#designCourse" },
+    {
+      key: 1,
+      name: "About us",
+      link: "/#aboutUs",
+      linkLabel: "home - about us section",
+    },
+    {
+      key: 2,
+      name: "Facilities",
+      link: "/#facilities",
+      linkLabel: "home - facilities section",
+    },
+    {
+      key: 3,
+      name: "Computing courses",
+      link: "/#computingCourse",
+      linkLabel: "home - computing courses",
+    },
+    {
+      key: 4,
+      name: "Design courses",
+      link: "/#designCourse",
+      linkLabel: "home - design courses",
+    },
   ];
 
   const forStudentsTabs = [
-    { key: 1, name: "Explore", link: "/forStudents#introduction" },
-    { key: 2, name: "Our facilities", link: "/forStudents#ourFacilities" },
-    { key: 3, name: "Experience us", link: "/forStudents#invitation" },
+    {
+      key: 1,
+      name: "Explore",
+      link: "/forStudents#introduction",
+      linkLabel: "for students - introduction",
+    },
+    {
+      key: 2,
+      name: "Our facilities",
+      link: "/forStudents#ourFacilities",
+      linkLabel: "for students- our facilities",
+    },
+    {
+      key: 3,
+      name: "Experience us",
+      link: "/forStudents#invitation",
+      linkLabel: "for students - invitation",
+    },
   ];
 
   const informationHubTabs = [
@@ -59,18 +94,44 @@ const Sidebar = () => {
       key: 1,
       name: "Staff information",
       link: "/informationHub#staffInformation",
+      linkLabel: "information hub - staff information",
     },
   ];
 
   const servicesTabs = [
-    { key: 1, name: "Partner with us", link: "/services#servicesIntro" },
-    { key: 2, name: "Our services", link: "/services#ourServices" },
-    { key: 3, name: "Why us", link: "/services#whyUs" },
-    { key: 4, name: "Get in touch", link: "/services#getInTouch" },
+    {
+      key: 1,
+      name: "Partner with us",
+      link: "/services#servicesIntro",
+      linkLabel: "services - partner with us",
+    },
+    {
+      key: 2,
+      name: "Our services",
+      link: "/services#ourServices",
+      linkLabel: "services - our services",
+    },
+    {
+      key: 3,
+      name: "Why us",
+      link: "/services#whyUs",
+      linkLabel: "services - why us",
+    },
+    {
+      key: 4,
+      name: "Get in touch",
+      link: "/services#getInTouch",
+      linkLabel: "services - get in touch",
+    },
   ];
 
   const coursesTabs = [
-    { key: 1, name: "Available courses", link: "/courses#courses" },
+    {
+      key: 1,
+      name: "Available courses",
+      link: "/courses#courses",
+      linkLabel: "courses - available courses",
+    },
   ];
 
   const resourcesTabs = [
@@ -78,21 +139,31 @@ const Sidebar = () => {
       key: 1,
       name: "Access rules",
       link: "/learningResources#accessRules",
+      linkLabel: "resources - access rules",
     },
     {
       key: 2,
       name: "Use of facilities",
       link: "/learningResources#facilitiesUse",
+      linkLabel: "resources - use of facilities",
     },
   ];
 
   // SIDEBAR PARENT TABS
   const availableTabs = [
-    { key: 1, name: "Home", link: "/", tabs: homeTabs, icon: <IoMdHome /> },
+    {
+      key: 1,
+      name: "Home",
+      link: "/",
+      linkLabel: "link to home page",
+      tabs: homeTabs,
+      icon: <IoMdHome />,
+    },
     {
       key: 2,
       name: "For Students",
       link: "/forStudents",
+      linkLabel: "link to for students page",
       tabs: forStudentsTabs,
       icon: <FaUser />,
     },
@@ -100,6 +171,7 @@ const Sidebar = () => {
       key: 3,
       name: "Information Hub",
       link: "/informationHub",
+      linkLabel: "link to information hub page",
       tabs: informationHubTabs,
       icon: <IoInformation />,
     },
@@ -107,6 +179,7 @@ const Sidebar = () => {
       key: 4,
       name: "Services",
       link: "/services",
+      linkLabel: "link to services page",
       tabs: servicesTabs,
       icon: <IoMdBuild />,
     },
@@ -114,6 +187,7 @@ const Sidebar = () => {
       key: 6,
       name: "Courses",
       link: "/courses",
+      linkLabel: "link to courses page",
       tabs: coursesTabs,
       icon: <RiAlignItemLeftFill />,
     },
@@ -121,6 +195,7 @@ const Sidebar = () => {
       key: 5,
       name: "Learning Resources",
       link: "/learningResources",
+      linkLabel: "link to learning resources page",
       tabs: resourcesTabs,
       icon: <ImBooks />,
     },
@@ -150,7 +225,7 @@ const Sidebar = () => {
           {availableTabs.map((tab) => (
             <li key={tab.key} className="parent-list-item">
               <div className="parent-item-container">
-                <Link href={tab.link}>
+                <Link href={tab.link} aria-label={tab.linkLabel}>
                   {tab.icon} {tab.name}
                 </Link>
                 <span onClick={() => toggleSidebarChildMenu(tab.key)}>
@@ -168,7 +243,9 @@ const Sidebar = () => {
                 <ul className="child-list-item">
                   {tab.tabs.map((item) => (
                     <li key={item.key} className="child-list-item">
-                      <Link href={item.link}>- {item.name}</Link>
+                      <Link href={item.link} aria-label={item.linkLabel}>
+                        - {item.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
