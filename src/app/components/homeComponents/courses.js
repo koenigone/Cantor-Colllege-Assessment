@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaBook } from "react-icons/fa";
 
 const OurCourses = () => {
+  // course array - desription is a nested array
   const courses = [
     {
       id: "computingCourse",
@@ -48,9 +49,11 @@ const OurCourses = () => {
 
   return (
     <section className="courses-offered">
-      <h1>
-        Courses Offered <FaBook size={17} />
-      </h1>
+      <div>
+        <h1>
+          Courses Offered <FaBook size={17} />
+        </h1>
+      </div>
       <div>
         {courses.map((course) => (
           <div key={course.id} className="course-item" id={course.id}>

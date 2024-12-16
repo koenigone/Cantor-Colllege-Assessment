@@ -5,32 +5,39 @@ import { GiGraduateCap } from "react-icons/gi";
 import { MdEventAvailable } from "react-icons/md";
 
 const OurServices = () => {
+
+  // services array
   const services = [
     {
+      key: 1,
       title: "Custom Training and Development Programs",
       icon: <FaTools />,
       description:
         "Empower your workforce with skills that matter. Our faculty can develop custom training programs that address your business's specific needs, whether in advanced computing technologies, creative design, or the latest in tech innovation. We offer flexible learning options, including on-site workshops, online modules, and blended learning experiences.",
     },
     {
+      key: 2,
       title: "Research and Development Partnerships",
       icon: <FaArrowUpRightDots />,
       description:
         "Leverage the talent and creativity of our students and faculty by partnering with Cantor College on research and development projects. Whether you’re looking to explore new technologies, innovate your product line, or solve complex technical challenges, our R&D team is ready to collaborate with you.",
     },
     {
+      key: 3,
       title: "Design and Technology Consultancy",
       icon: <FaPenFancy />,
       description:
         "Our experienced professionals and top-tier students can provide consultancy services to help you with a variety of projects, from web development and software engineering to product design and user experience optimization. We offer fresh perspectives and innovative approaches tailored to your business.",
     },
     {
+      key: 4,
       title: "Internships and Graduate Recruitment",
       icon: <GiGraduateCap />,
       description:
         "Gain access to a pool of highly skilled and motivated students ready to contribute to your business. Our internship and recruitment services can connect you with top talent in computing, design, and technology, providing you with candidates who are equipped with the latest industry knowledge and practical experience.",
     },
     {
+      key: 5,
       title: "Event Hosting and Sponsorship",
       icon: <MdEventAvailable />,
       description:
@@ -41,8 +48,8 @@ const OurServices = () => {
   return (
     <section className="our-services-container" id="ourServices">
       <h2>Our Services</h2>
-      {services.map((service, index) => (
-        <article key={index}>
+      {services.map((service) => (
+        <article key={service.key}>
           <h3>
             {service.icon} - {service.title}
           </h3>

@@ -1,16 +1,18 @@
+/* HEADER ON TOP OF COURSES TABLE */
 .courses-header {
   margin-bottom: 20px;
 }
 
-table {
+/* MAIN COURSES TABLE */
+.courses-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1rem;
-  font-family: Arial, sans-serif;
+  font-size: 17px;
   color: #333;
 }
 
-thead th {
+/* COURSES TABLE HEADER */
+.courses-table-header th {
   background-color: #7B003A;
   height: 50px;
   color: #fff;
@@ -19,42 +21,41 @@ thead th {
   border-bottom: 2px solid #ddd;
 }
 
-tbody tr {
+/* COURSES TABLE BODY ROW */
+.courses-table-body tr {
   border-bottom: 1px solid #ddd;
   transition: background-color 0.3s;
 }
 
-tbody tr:hover {
+/* COURSEES TABLE BODY ROW HOVER EFFECT */
+.courses-table-body tr:hover {
   background-color: #f9f9f9;
+  cursor: pointer;
 }
 
-tbody td {
+/* COURSES TABLE BODY ROW ITEM */
+.courses-table-body td {
   padding: 20px;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-thead th:nth-child(1),
-tbody td:nth-child(1) {
+/* the space course table title header & course title is taking */
+.courses-table-header th:nth-child(1),
+.courses-table-body td:nth-child(1) {
   width: 60%;
 }
 
-thead th:nth-child(2),
-tbody td:nth-child(2) {
+/* the space year of entry is taking */
+.courses-table-header th:nth-child(2),
+.courses-table-body td:nth-child(2) {
   width: 30%;
 }
 
-thead th:nth-child(3),
-tbody td:nth-child(3) {
+/* the space that collapse table button is taking */
+.courses-table-header th:nth-child(3),
+.courses-table-body td:nth-child(3) {
   width: 10%;
-}
-
-.courses-table-row {
-  cursor: pointer;
-}
-
-.hide-for-mobile {
-  display: none;
 }
 
 .courses-table-row .row-dropdown span {
@@ -63,31 +64,21 @@ tbody td:nth-child(3) {
   transition: transform 0.3s;
 }
 
+/* rotate the collape button when hovered (180 degrees) */
 .courses-table-row .row-dropdown span:hover {
   transform: rotate(180deg);
 }
 
+/* COURSES TABLE EXPANDABLE CHILD */
 .courses-table-child-row td {
   padding: 15px;
   border-top: 1px solid #ddd;
   text-align: left;
 }
 
-.skeleton {
-  background-color: #e0e0e0;
-  height: 1rem;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.skeleton.circle {
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-}
-
-@media (min-width: 1000px) {
-  table {
+/* DESKTOP */
+@media (min-width: 1300px) {
+  .courses-table {
     table-layout: fixed;
   }
 }

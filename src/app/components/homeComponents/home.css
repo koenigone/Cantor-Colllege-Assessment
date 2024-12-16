@@ -2,7 +2,7 @@ section {
   margin: 0 0 50px 0;
 }
 
-/* facilities */
+/* FACILITIES */
 .facilities-list {
   margin: 30px 0;
   text-align: start;
@@ -26,7 +26,7 @@ section {
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.171);
 }
 
-/* courses */
+/* COURSES */
 .courses-offered {
   margin: 0 auto;
   text-align: center;
@@ -44,13 +44,14 @@ section {
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.123);
 }
 
-/* footer */
+/* FOOTER */
 .homeFooter {
   text-align: center;
   font-size: 15px;
   line-height: 25px;
 }
 
+/* FOOTER HOVER EFFECT */
 .footer-link:hover {
   text-decoration: underline;
 }
@@ -60,7 +61,7 @@ section {
 
 } */
 
-/* DESKTOP SCREEN */
+/* DESKTOP */
 @media (min-width: 1300px) {
   .facilities-list-container {
     display: flex;

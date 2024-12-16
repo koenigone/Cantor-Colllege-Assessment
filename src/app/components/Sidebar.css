@@ -1,3 +1,4 @@
+/* PARENT SIDEBAR SECTION */
 .sidebar {
   background-color: #B6004C;
   height: 100vh;
@@ -13,6 +14,17 @@
   transform: translateX(0);
 }
 
+/* SIDEBAR CHILD SECTION (NESTED MENU) */
+.sidebarChild {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.sidebarChild.childActive {
+  max-height: 300px;
+}
+
+/* BURGER MENU BUTTON */
 .burger {
   position: absolute;
   top: 1vh;
@@ -25,7 +37,8 @@
   z-index: 1000;
 }
 
-.overlay {
+/* MOBILE OVERLAY THAT CLOSES THE SIDEBAR */
+.close-sidebar-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -35,6 +48,7 @@
   z-index: 1000;
 }
 
+/* MAIN LOGO IN THE SIDEBAR */
 .sidebar .logo img {
   height: 7vh;
   background-color: #ffff;
@@ -50,10 +64,7 @@
   line-height: 6vh;
 }
 
-.sidebar .sidebar-tabs {
-  list-style-type: none;
-}
-
+/* TABS (PARENT SECTION) */
 .sidebar .sidebar-tabs .parent-list-item {
   border-radius: 4px;
   line-height: 30px;
@@ -80,15 +91,21 @@
   background-color: #c51e64;
 }
 
-.sidebar .sidebar-tabs .submenu {
+/* TABS (CHILD SECTION) */
+.sidebarChild .child-list-item {
   list-style-type: none;
 }
 
-.sidebar .sidebar-tabs .child-list-item a {
+.sidebarChild .child-list-item li {
+  margin: 20px 10px;
+}
+
+.sidebarChild .child-list-item a {
   font-size: 15px;
   line-height: 20px;
 }
 
+/* TABLET */
 @media (min-width: 650px) and (max-width: 1299px) {
   .sidebar {
     width: 30%;
@@ -99,6 +116,7 @@
   }
 }
 
+/* DESKTOP */
 @media (min-width: 1300px) {
   .sidebar {
     width: 16%;

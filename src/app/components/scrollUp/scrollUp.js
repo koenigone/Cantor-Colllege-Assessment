@@ -4,7 +4,7 @@ import { FaArrowUp } from "react-icons/fa";
 
 const ScrollUp = () => {
   return(
-    <Link href='#' className='scroll-up-btn'><FaArrowUp /></Link>
+    <Link href='#' className='scroll-up-btn' aria-label='Scroll to top'><FaArrowUp /></Link>
   );
 }
 

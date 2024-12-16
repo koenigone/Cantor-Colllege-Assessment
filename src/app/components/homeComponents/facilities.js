@@ -3,22 +3,25 @@ import Image from "next/image";
 import { BiSolidBuildings } from "react-icons/bi";
 
 const Facilities = () => {
+
+  // facilities array
   const facilitiesServices = [
-    "Wi-Fi technology",
-    "Pool teaching rooms, including classrooms to teach from 25 - 80 students",
-    "Specialist faculty facilities",
-    "A double-height lecture theatre at first and second floor level",
-    "Dramatic three-storey glass open atrium",
-    "Meeting rooms",
-    "Office accommodation",
-    "Specialist IT facilities",
-    "Reception desk area",
-    "Catering outlet",
-    "Parking for disabled badge holders",
-    "Cycle racks",
-    "Gallery",
+    { key: 1, facility: "Wi-Fi technology" },
+    { key: 2, facility: "Pool teaching rooms, including classrooms to teach from 25 - 80 students" },
+    { key: 3, facility: "Specialist faculty facilities" },
+    { key: 4, facility: "A double-height lecture theatre at first and second floor level" },
+    { key: 5, facility: "Dramatic three-storey glass open atrium" },
+    { key: 6, facility: "Meeting rooms" },
+    { key: 7, facility: "Office accommodation" },
+    { key: 8, facility: "Specialist IT facilities" },
+    { key: 9, facility: "Reception desk area" },
+    { key: 10, facility: "Catering outlet" },
+    { key: 11, facility: "Parking for disabled badge holders" },
+    { key: 12, facility: "Cycle racks" },
+    { key: 13, facility: "Gallery" },
   ];
 
+  // images array
   const images = [
     { key: 1, src: "/IMG_1099.jpeg", alt: "Wi-Fi technology image" },
     { key: 2, src: "/cantor-gallery.jpg", alt: "Teaching room image" },
@@ -61,8 +64,8 @@ const Facilities = () => {
         <div className="facilities-list-container">
           <div className="facilities-list-items">
             <ul>
-              {facilitiesServices.map((service, index) => (
-                <li key={index}>{service}</li>
+              {facilitiesServices.map((service) => (
+                <li key={service.key}>{service.facility}</li>
               ))}
             </ul>
           </div>

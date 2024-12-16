@@ -2,13 +2,14 @@ section {
   margin: 0px 0 50px 0;
 }
 
-/* IMAGE RELATED */
+/* IMAGES POSITION */
 .forStudents-image-container, 
 .facilities-image-container {
   margin: 0 auto;
   text-align: center;
 }
 
+/* IMAGES SHADOW */
 .forStudents-image-container img,
 .facilities-container img {
   margin: 50px 0 20px 0;

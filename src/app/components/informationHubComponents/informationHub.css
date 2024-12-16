@@ -2,27 +2,31 @@ section {
   margin: 0px 0 50px 0;
 }
 
+/* INFORMATION HUB CONTAINER */
 .information-hub-image-container {
   margin: 0 auto;
   text-align: center;
   display: block;
 }
 
+/* CONTAINER IMAGES */
 .information-hub-image-container img {
   width: 100% !important;
   height: auto !important;
 }
 
+/* CONTAINER ARTICLES */
 .informationhub-article-container article {
   margin: 20px 0;
 }
 
+/* CONTAINER LINKS */
 .informationhub-article-container a {
   color: #B6004C;
 }
 
 
-/* TABLET SCREEN */
+/* TABLET */
 @media (min-width: 650px) and (max-width: 1299px) {
   .information-hub-image-container {
     display: flex;
@@ -34,7 +38,7 @@ section {
   }
 }
 
-/* DESKTOP SCREEN */
+/* DESKTOP */
 @media (min-width: 1300px) {
   .information-hub-image-container {
     display: flex;

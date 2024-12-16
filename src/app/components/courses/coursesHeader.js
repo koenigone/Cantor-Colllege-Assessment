@@ -14,7 +14,7 @@ const CoursesHeader = () => {
       <div>
         <p>
           Below, you will find a list of courses available at <span className="highlight">Cantor College</span>.
-          See what interests you and feel free to <Link href="/#homeFooter">reach out to us!</Link>
+          See what interests you and feel free to <Link href="/#homeFooter" aria-label='Link to contant us section'>reach out to us!</Link>
         </p>
       </div>
     </section>

@@ -2,6 +2,7 @@ section {
   margin: 0px 0 50px 0;
 }
 
+/* SERVICES INTRO (HEADER)*/
 .service-intro-p {
   margin: 0 0 30px 0;
 }
@@ -15,6 +16,7 @@ section {
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.171);
 }
 
+/* OUR SERVICES*/
 .our-services-container {
   margin: 0 0 20px 0;
 }
@@ -23,6 +25,7 @@ section {
   margin: 0 0 20px 10px;
 }
 
+/* WHY US SECTION*/
 .why-us-container h4 {
   margin: 0 10px;
 }
@@ -31,6 +34,7 @@ section {
   margin: 0 0 30px 0;
 }
 
+/* DESKTOP */
 @media (min-width: 1300px) {
   .service-main-image {
     width: 80% !important;

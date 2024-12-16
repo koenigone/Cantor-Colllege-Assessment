@@ -9,23 +9,38 @@ import { ImBooks } from "react-icons/im";
 import { RiAlignItemLeftFill } from "react-icons/ri";
 import React, { useState } from "react";
 
+/* STRUCTURE
+- initialize useStates for sidebar & sidebar children
+- functions to control the useStates (open/close sidebar - open sidebarChild & close previous)
+- sidebar children arrays to be used in the main sidebar array
+- main sidebar array objects
+- Nav structure:
+  - toggle sidebar button (burger)
+  - overlay that gets displayed when mobile sidebar is toggled
+  - main sidebar menu structure
+    - parent list items (uses main sidebar array)
+    - child list items (uses sidebar children arrays)
+*/
 const Sidebar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [openMenuKey, setOpenMenuKey] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // closed is default
+  const [sidebarChildOpen, setSidebarChildOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen); // Toggle the state
+    setSidebarOpen(!sidebarOpen);
   };
 
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
 
-  const toggleMenu = (key) => {
-    setOpenMenuKey((prevKey) => (prevKey === key ? null : key));
+  const toggleSidebarChildMenu = (childKey) => {
+    // keep only one child open at the time - opened? close the previous
+    setSidebarChildOpen((previousKey) =>
+      previousKey === childKey ? false : childKey
+    );
   };
 
-  // NESTED TABS ARRAYS
+  // SIDEBAR CHILD MENU TABS
   const homeTabs = [
     { key: 1, name: "About us", link: "/#aboutUs" },
     { key: 2, name: "Facilities", link: "/#facilities" },
@@ -65,7 +80,7 @@ const Sidebar = () => {
       link: "/learningResources#accessRules",
     },
     {
-      key: 3,
+      key: 2,
       name: "Use of facilities",
       link: "/learningResources#facilitiesUse",
     },
@@ -117,7 +132,9 @@ const Sidebar = () => {
         &#9776;
       </button>
 
-      {sidebarOpen && <div className="overlay" onClick={closeSidebar}></div>}
+      {sidebarOpen && (
+        <div className="close-sidebar-overlay" onClick={closeSidebar}></div>
+      )}
 
       <menu className={sidebarOpen ? "sidebar active" : "sidebar"}>
         <div className="logo">
@@ -136,21 +153,25 @@ const Sidebar = () => {
                 <Link href={tab.link}>
                   {tab.icon} {tab.name}
                 </Link>
-                <span onClick={() => toggleMenu(tab.key)}>
+                <span onClick={() => toggleSidebarChildMenu(tab.key)}>
                   <IoIosArrowDown />
                 </span>
               </div>
 
-              <div>
-                {openMenuKey === tab.key && tab.tabs && tab.tabs.length > 0 && (
-                  <ul className="submenu">
-                    {tab.tabs.map((item) => (
-                      <li key={item.key} className="child-list-item">
-                        <Link href={item.link}>- {item.name}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <div
+                className={
+                  sidebarChildOpen === tab.key
+                    ? "sidebarChild childActive"
+                    : "sidebarChild"
+                }
+              >
+                <ul className="child-list-item">
+                  {tab.tabs.map((item) => (
+                    <li key={item.key} className="child-list-item">
+                      <Link href={item.link}>- {item.name}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}

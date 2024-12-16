@@ -3,28 +3,41 @@ import "./courses.css";
 import { IoIosArrowDown } from "react-icons/io";
 import React, { useState } from "react";
 
+/* STRUCTURE
+- useState to open course children
+- toggle child menu - make sure to close the previously opened menu
+- initialize table
+- table head content
+- table body content
+  - React.Fragment to contain each courses key without using eny of the DOM elements
+  - all courses from the database
+    - course children
+*/
 const CoursesTable = ({ courses }) => {
-  const [openTable, setOpenTable] = useState(null);
+  const [courseChildOpen, setCourseChildOpen] = useState(false);
 
-  const toggleTable = (key) => {
-    setOpenTable((prevKey) => (prevKey === key ? null : key));
+  const toggleCourseChildMenu = (childKey) => {
+    // keep only one child open at the time - opened? close the previous
+    setCourseChildOpen((previousKey) =>
+      previousKey === childKey ? false : childKey
+    );
   };
 
   return (
-    <table className="courses-table-container" id="courses">
-      <thead>
+    <table className="courses-table" id="courses">
+      <thead className="courses-table-header">
         <tr>
           <th>Title</th>
           <th>Year of entry</th>
           <th>Details</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="courses-table-body">
         {courses.map((course, index) => (
           <React.Fragment key={index}>
             <tr
               className="courses-table-row"
-              onClick={() => toggleTable(course.CourseTitle)}
+              onClick={() => toggleCourseChildMenu(course.CourseTitle)}
             >
               <td>{course.CourseTitle}</td>
               <td>{course.YearOfEntry}</td>
@@ -35,7 +48,7 @@ const CoursesTable = ({ courses }) => {
               </td>
             </tr>
 
-            {openTable === course.CourseTitle && (
+            {courseChildOpen === course.CourseTitle && (
               <tr className="courses-table-child-row">
                 <td colSpan="5">
                   <div>

@@ -2,11 +2,13 @@ section {
   margin: 0 0 50px 0;
 }
 
+/* RESOURCES HEADER PARAGRAPHS AND LIST */
 .resources-header-p p, ul {
   margin: 20px 20px;
 }
 
-ul li {
+/* ALL LISTS IN THE LEARNING RESOURCES PAGE */
+.rules-list li {
   margin: 20px 0;
 }
 
@@ -15,6 +17,7 @@ ul li {
   margin: 20px 0;
 }
 
+/* DESKTOP */
 @media (min-width: 1300px) {
   .list-container {
     width: 90%;
