@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEXT.JS PROJECT
 
-## Getting Started
+## YOUR NAME HERE
+Mohammad Mohammad
 
-First, run the development server:
+## GITHUB REPO ADDRESS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+My repo is located at:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://github.com/koenigone/Cantor-Colllege-Assessment
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## CONFIRMATION OF FILES
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I confirm I have zipped the files in the format of:
+├── evidence
+│   ├── lighthouse-audits
+│   ├── wireframes
+│   ├── database
+├── website_code
+│   ├── /src
+│   ├── package.json
+│   ├── .gitignore
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+I confirm I have only included files needed to run the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ADVICE ON SUBMISSION
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Do not include the `node_modules` or `.next` folders.  These large folder can be recreated for marking via `npm install` so do ensure your `package.json` file is included.
 
-## Deploy on Vercel
+The `website_code` folder should hold only the files **used** in your project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you have used a database include an SQL dump of the SQL used.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please do not re-submit the `website-images-assets` and `web-site-text-and-data`.  We don't want them back!  It is **LAZY** to include them!
